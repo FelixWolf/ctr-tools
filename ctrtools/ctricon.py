@@ -518,16 +518,3 @@ class CTRIcon:
             "XCSZ_L": self.XCSZ_L,
             "XCSZ_R": self.XCSZ_R,
         }
-
-if __name__ == "__main__":
-    import argparse
-    import json
-    
-    parser = argparse.ArgumentParser(prog='IconGen', description='Generate a CTR ICN file')
-    
-    parser.add_argument('spec', help="Input JSON", type=argparse.FileType('r'))
-    parser.add_argument('out', help="Output ICN", type=argparse.FileType('wb'))
-    args = parser.parse_args()
-    
-    icn = CTRIcon.fromDict(json.load(args.spec))
-    icn.toStream(args.out)
