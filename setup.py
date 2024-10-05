@@ -11,10 +11,13 @@ setup(
     description="A library for working with Homebrew for the Nintendo® 3DS™",
     long_description=long_description,
     long_description_content_type="text/markdown" if long_description else None,
-    url="https://github.com/felixwolf/ctr-tools",
+    url="https://github.com/felixwolf/ctrtools",
     author="Félix",
     author_email="felix.wolfz@gmail.com",
     packages=["ctrtools"],
+    install_requires=[
+        "Pillow",
+    ],
     entry_points={
         'console_scripts': [
             'ctricon=ctrtools.runnables.ctricon:main',  # Command name and function path
